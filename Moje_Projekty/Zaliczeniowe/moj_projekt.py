@@ -35,7 +35,7 @@ def zapis_do_pliku():
         wpis = {'Marka': marka, 'Model': model}
         lista_aut.append(wpis)
 
-        with open('auta.json', mode='a') as plik:
+        with open('auta.json', mode='w') as plik:
             json.dump(lista_aut, plik)
             return render_template('zapis.html', **wpis)
     else:
