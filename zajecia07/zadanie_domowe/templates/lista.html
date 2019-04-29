@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista</title>
+</head>
+<body>
+
+<h2>Lista osób:</h2>
+
+<ul>
+    {% for osoba in lista_osob %}
+    <li>
+        <a href="/osoba/{{ osoba.id }}">{{ osoba.imie | first }}. {{ osoba.nazwisko }}
+            {% if osoba.is_admin %} <b>[ADMIN]</b>{% endif %}
+        </a>
+    </li>
+    {% endfor %}
+
+</ul>
+
+</body>
+</html>
